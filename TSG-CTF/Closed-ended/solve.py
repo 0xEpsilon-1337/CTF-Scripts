@@ -2,11 +2,11 @@ from pwn import *
 elf = context.binary =  ELF("./closed_ended")
 context.log_level = "debug"
 
-# io = process()
-io = remote("34.84.25.24", 50037)
+io = process()
+# io = remote("34.84.25.24", 50037)
 gs = '''
-# b *main+124
-# b *main+46
+b *main+124
+b *main+46
 b *main+0x49
 '''
 # gdb.attach(io,gdbscript=gs)
